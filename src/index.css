@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --color-alabaster: #FAFAF7;
+  --color-eggshell: #F0EAD6;
+  --color-charcoal: #3B3C36;
+  --color-gold: #D4AF37;
+  --color-gold-muted: #B8860B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-alabaster);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-alabaster);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-eggshell);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #dcd6c0;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .scroll-mt-24 {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* Nav link underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #D4AF37;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hero watermark */
+.hero-bg-text {
+  position: absolute;
+  top: 5%;
+  left: -8%;
+  font-size: 45vw;
+  line-height: 0.8;
+  color: #F0EAD6;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+/* Post cards */
+.post-card {
+  border: 1px solid rgba(0,0,0,0.03);
+  background: #ffffff;
+}
+
+/* Button sweep */
+.btn-sweep {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
+.btn-sweep::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3B3C36;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+.btn-sweep:hover {
+  color: #FAFAF7;
+}
+.btn-sweep:hover::before {
+  transform: translateY(0);
+}
+
+/* Floating label */
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  transform: translateY(-24px) scale(0.85);
+  color: #D4AF37;
+  opacity: 1;
+}
+.floating-label {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease, opacity 0.3s ease;
+  transform-origin: left top;
+  opacity: 0.6;
+}
+.floating-input:focus {
+  border-color: #D4AF37;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #FAFAF7 inset;
+  -webkit-text-fill-color: #3B3C36;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Admin panel */
+.admin-bg-pattern {
+  background-image: radial-gradient(circle at 2px 2px, rgba(59, 60, 54, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+.post-row-transition {
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glass nav */
+.glass-nav {
+  backdrop-filter: blur(8px);
+  background-color: rgba(250, 250, 247, 0.95);
+  border-bottom: 1px solid rgba(59, 60, 54, 0.08);
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.98) translateY(-5px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Reveal on scroll */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: reveal-up 0.8s ease-out forwards;
+}
+
+@keyframes reveal-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover lift effect */
+.post-card-hover-effect {
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.post-card-hover-effect:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+/* Card zoom image */
+.card-zoom img {
+  transition: transform 0.7s ease;
+}
+.card-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* Custom date/time inputs */
+.form-input::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.form-input::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+.form-input:focus::-webkit-calendar-picker-indicator {
+  filter: invert(0.55) sepia(1) saturate(3) hue-rotate(5deg);
+  opacity: 1;
+}
