@@ -1,4 +1,5 @@
-import { Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '@/store'
 
 interface Props {
@@ -6,7 +7,14 @@ interface Props {
 }
 
 export function ProtectedRoute({ children }: Props) {
+  const navigate = useNavigate()
   const { isAuthenticated, isLoading } = useAuthStore()
+
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      navigate('/', { replace: true })
+    }
+  }, [isAuthenticated, isLoading, navigate])
 
   if (isLoading) {
     return (
@@ -20,7 +28,7 @@ export function ProtectedRoute({ children }: Props) {
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/" replace />
+    return null
   }
 
   return <>{children}</>

@@ -1,14 +1,15 @@
 import { useEffect } from 'react'
-import { authService } from '../services/auth.service'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '@/lib/firebase'
 import { useAuthStore } from '@/store'
 
 export function useAuth() {
-  const { setUser, setLoading } = useAuthStore()
+  const setUser = useAuthStore((s) => s.setUser)
 
   useEffect(() => {
-    const unsubscribe = authService.subscribeToAuthChanges((user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user)
     })
     return unsubscribe
-  }, [setUser, setLoading])
+  }, [setUser])
 }

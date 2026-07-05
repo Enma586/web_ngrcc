@@ -1,6 +1,6 @@
 export function Hero() {
   return (
-    <header className="relative min-h-screen flex flex-col justify-end px-6 md:px-24 pb-16 md:pb-24 overflow-hidden">
+    <header className="relative min-h-dvh flex flex-col justify-center md:justify-end px-6 md:px-24 pb-8 md:pb-24 overflow-hidden">
       <div className="hero-bg-text" aria-hidden="true">NG</div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 relative z-10 items-end">

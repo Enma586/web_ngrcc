@@ -46,19 +46,19 @@ export default function PostDetailView() {
 
   async function handleShare() {
     if (!post) return
-    const shareText = `${post.title}\n\n${post.description}\n\n— Grupo Juvenil Nueva Generación`
+    const url = `${window.location.origin}/post/${post.id}`
     if (navigator.share) {
       try {
-        await navigator.share({ title: post.title, text: shareText })
+        await navigator.share({ title: post.title, url })
       } catch {
         // user cancelled
       }
     } else {
       try {
-        await navigator.clipboard.writeText(shareText)
-        toast.success('Contenido copiado al portapapeles')
+        await navigator.clipboard.writeText(url)
+        toast.success('Enlace copiado al portapapeles')
       } catch {
-        toast.error('No se pudo compartir el contenido')
+        toast.error('No se pudo copiar el enlace')
       }
     }
   }
@@ -113,15 +113,10 @@ export default function PostDetailView() {
               {post.postType === 'evento' ? 'Próximos Eventos' : 'Crónicas de Fe'}
             </span>
             <span className="w-1 h-1 rounded-full bg-gold/30" />
-            <span>{new Date(post.createdAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-            {post.date && (
-              <>
-                <span className="w-1 h-1 rounded-full bg-gold/30" />
-                <span className="text-gold">
-                  {new Date(post.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
-                </span>
-              </>
-            )}
+            <span className={post.date ? 'text-gold' : ''}>
+              {new Date(post.date || post.createdAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
+              {post.date && ` — ${new Date(post.date).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}`}
+            </span>
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-8xl font-light leading-[1.1] mb-10 text-charcoal">
             {post.title}

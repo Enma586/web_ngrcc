@@ -17,9 +17,7 @@ export function Contacto() {
 
         <div className="flex flex-wrap justify-center gap-6 mb-12">
           <a
-            href={config.contact.gmailUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`mailto:${config.contact.email}`}
             className="flex items-center gap-3 px-8 py-5 bg-white rounded-2xl border border-eggshell hover:border-gold/30 hover:shadow-lg transition-all duration-300 group"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" strokeWidth="2" className="shrink-0 stroke-gold"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>

@@ -1,6 +1,14 @@
 export default {
   async fetch(request: Request, env: any): Promise<Response> {
-    // Esto obliga al Worker a buscar y servir los archivos de la carpeta dist automáticamente
-    return await env.ASSETS.fetch(request);
+    const url = new URL(request.url)
+    const response = await env.ASSETS.fetch(request)
+
+    if (response.status === 404 && !url.pathname.startsWith('/assets/')) {
+      return await env.ASSETS.fetch(
+        new Request(`${url.origin}/index.html`, request)
+      )
+    }
+
+    return response
   },
-};
+}
