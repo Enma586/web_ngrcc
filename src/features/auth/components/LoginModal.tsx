@@ -39,7 +39,7 @@ export function LoginModal({ onClose, onSuccess }: Props) {
           <Church className="w-9 h-9 text-gold" />
         </div>
         <div className="space-y-2">
-          <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-gold-muted">
+          <p className="text-[11px] font-bold tracking-[0.5em] uppercase text-gold-muted">
             Iglesia Católica San Antonio Maria Claret
           </p>
           <h1 className="font-serif text-4xl md:text-5xl leading-tight font-medium text-charcoal tracking-tight">
@@ -55,7 +55,7 @@ export function LoginModal({ onClose, onSuccess }: Props) {
           <h2 className="font-serif text-2xl tracking-tight text-charcoal/90 text-center">
             Área Reservada
           </h2>
-          <p className="text-[10px] uppercase tracking-[0.2em] text-charcoal/60 mt-2 text-center font-medium">
+          <p className="text-[11px] uppercase tracking-[0.2em] text-charcoal/60 mt-2 text-center font-medium">
             Acceso al Sistema Sacramental
           </p>
         </div>
@@ -115,7 +115,7 @@ export function LoginModal({ onClose, onSuccess }: Props) {
               disabled={isLoading}
               className="w-full bg-charcoal text-alabaster py-5 px-8 rounded-xl flex items-center justify-center gap-4 group relative overflow-hidden cursor-pointer hover:shadow-2xl hover:shadow-charcoal/20 active:scale-[0.99] transition-shadow duration-300 disabled:opacity-70"
             >
-              <span className="relative z-10 text-[11px] font-bold tracking-[0.2em] uppercase">
+              <span className="relative z-10 text-[12px] font-bold tracking-[0.2em] uppercase">
                 {isLoading ? 'Verificando...' : 'Iniciar Sesión'}
               </span>
               {isLoading ? (
@@ -134,7 +134,7 @@ export function LoginModal({ onClose, onSuccess }: Props) {
         </form>
       </div>
 
-      <p className="mt-12 text-[10px] text-charcoal/40 tracking-tight text-center">
+      <p className="mt-12 text-[11px] text-charcoal/40 tracking-tight text-center">
         Copyright &copy; 2024 Sacramental Management.<br />
         All rights reserved.
       </p>

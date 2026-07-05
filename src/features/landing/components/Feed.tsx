@@ -26,7 +26,7 @@ export function Feed({ posts, onPostClick }: Props) {
           <div className="lg:col-span-4 lg:text-right pb-2 md:pb-4">
             <a
               href="#"
-              className="text-[10px] uppercase tracking-[0.4em] font-bold border-b border-gold pb-2 hover:text-gold transition-colors"
+              className="text-[11px] uppercase tracking-[0.4em] font-bold border-b border-gold pb-2 hover:text-gold transition-colors"
             >
               Archivo Completo
             </a>
@@ -48,7 +48,7 @@ export function Feed({ posts, onPostClick }: Props) {
                 />
               </div>
               <div className="space-y-4 md:space-y-6 max-w-2xl">
-                <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em] block">
+                <span className="text-gold text-[11px] font-bold uppercase tracking-[0.4em] block">
                   {new Date(mainPost.createdAt).toLocaleDateString('es-ES', {
                     day: 'numeric', month: 'long', year: 'numeric'
                   })}

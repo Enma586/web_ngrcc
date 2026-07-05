@@ -19,6 +19,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 17px;
   }
   body {
     background-color: var(--color-alabaster);
@@ -155,6 +156,26 @@ input:-webkit-autofill:focus {
   backdrop-filter: blur(8px);
   background-color: color-mix(in srgb, var(--color-alabaster) 95%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--color-charcoal) 8%, transparent);
+}
+
+/* Section divider between large sections */
+.section-divider {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.section-divider::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+  opacity: 0.5;
 }
 
 /* Animations */

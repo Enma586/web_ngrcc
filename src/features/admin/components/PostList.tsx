@@ -14,11 +14,11 @@ export function PostList({ posts, onEdit, onDelete, onRefresh }: Props) {
       <div className="header-animate flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 border-b border-eggshell pb-6 md:pb-8 gap-6">
         <div>
           <div className="flex items-center gap-3 mb-3 flex-wrap">
-            <span className="px-3 py-1 bg-gold/10 text-gold-muted text-[10px] font-bold uppercase tracking-[0.2em] rounded-full border border-gold/20">
+            <span className="px-3 py-1 bg-gold/10 text-gold-muted text-[11px] font-bold uppercase tracking-[0.2em] rounded-full border border-gold/20">
               Panel Institucional
             </span>
             <span className="text-gray-300">/</span>
-            <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+            <span className="text-[11px] text-gray-400 font-bold uppercase tracking-widest">
               Nueva Generación
             </span>
           </div>
@@ -34,7 +34,7 @@ export function PostList({ posts, onEdit, onDelete, onRefresh }: Props) {
 
         <button
           onClick={onRefresh}
-          className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold hover:text-charcoal transition-colors cursor-pointer shrink-0"
+          className="text-[11px] uppercase tracking-[0.3em] font-bold text-gold hover:text-charcoal transition-colors cursor-pointer shrink-0"
         >
           ↻ Actualizar
         </button>
@@ -44,7 +44,7 @@ export function PostList({ posts, onEdit, onDelete, onRefresh }: Props) {
         {posts.length === 0 ? (
           <div className="text-center py-20 text-gray-400">
             <p className="font-serif text-2xl italic">No hay publicaciones aún</p>
-            <p className="text-[10px] uppercase tracking-[0.3em] mt-4 font-bold">
+            <p className="text-[11px] uppercase tracking-[0.3em] mt-4 font-bold">
               Crea la primera publicación desde el panel izquierdo
             </p>
           </div>
@@ -62,7 +62,7 @@ export function PostList({ posts, onEdit, onDelete, onRefresh }: Props) {
 
       <div className="footer-animate mt-auto pt-8 md:pt-10 border-t border-eggshell flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="flex flex-col">
-          <span className="text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-1">
+          <span className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-1">
             Total Publicaciones
           </span>
           <span className="text-lg md:text-xl font-serif font-bold text-charcoal">
@@ -72,7 +72,7 @@ export function PostList({ posts, onEdit, onDelete, onRefresh }: Props) {
       </div>
 
       <div className="mt-6 md:mt-8 text-center">
-        <p className="text-[9px] text-gray-300 font-bold uppercase tracking-[0.4em]">
+        <p className="text-[10px] text-gray-300 font-bold uppercase tracking-[0.4em]">
           &copy; 2024 GRUPO JUVENIL NUEVA GENERACI&Oacute;N &bull; ADMIN PANEL
         </p>
       </div>

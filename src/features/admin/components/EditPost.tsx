@@ -78,21 +78,21 @@ export function EditPost({ post, onClose, onUpdated }: Props) {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="group">
-            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Tipo</label>
+            <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Tipo</label>
             <div className="flex gap-3">
-              <button type="button" onClick={() => setPostType('post')} className={`flex-1 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest border-2 transition-all duration-300 cursor-pointer ${postType === 'post' ? 'border-gold bg-gold/10 text-charcoal' : 'border-gray-200 bg-white text-gray-400 hover:border-gray-300'}`}>Post</button>
-              <button type="button" onClick={() => setPostType('evento')} className={`flex-1 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest border-2 transition-all duration-300 cursor-pointer ${postType === 'evento' ? 'border-gold bg-gold/10 text-charcoal' : 'border-gray-200 bg-white text-gray-400 hover:border-gray-300'}`}>Evento</button>
+              <button type="button" onClick={() => setPostType('post')} className={`flex-1 py-3 rounded-xl text-[11px] font-bold uppercase tracking-widest border-2 transition-all duration-300 cursor-pointer ${postType === 'post' ? 'border-gold bg-gold/10 text-charcoal' : 'border-gray-200 bg-white text-gray-400 hover:border-gray-300'}`}>Post</button>
+              <button type="button" onClick={() => setPostType('evento')} className={`flex-1 py-3 rounded-xl text-[11px] font-bold uppercase tracking-widest border-2 transition-all duration-300 cursor-pointer ${postType === 'evento' ? 'border-gold bg-gold/10 text-charcoal' : 'border-gray-200 bg-white text-gray-400 hover:border-gray-300'}`}>Evento</button>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="group">
-              <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">{postType === 'evento' ? 'Fecha del Evento' : 'Fecha'}</label>
+              <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">{postType === 'evento' ? 'Fecha del Evento' : 'Fecha'}</label>
               <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="form-input w-full bg-white rounded-lg border border-gray-200 px-4 py-3 outline-hidden focus:border-gold focus:bg-gray-50/30 text-sm transition-all duration-300" />
             </div>
             {postType === 'evento' && (
               <div className="group">
-                <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Hora</label>
+                <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Hora</label>
                 <input type="time" value={eventTime} onChange={(e) => setEventTime(e.target.value)} className="form-input w-full bg-white rounded-lg border border-gray-200 px-4 py-3 outline-hidden focus:border-gold focus:bg-gray-50/30 text-sm transition-all duration-300" />
               </div>
             )}
@@ -100,12 +100,12 @@ export function EditPost({ post, onClose, onUpdated }: Props) {
           </div>
 
           <div className="group">
-            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Título</label>
+            <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Título</label>
             <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="w-full bg-white rounded-lg border border-transparent border-b-gray-200 px-4 focus:px-5 focus:border-gold focus:bg-gray-50/30 outline-hidden py-3 font-serif text-xl transition-all duration-300" required />
           </div>
 
           <div>
-            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Imagen</label>
+            <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Imagen</label>
             <input ref={fileInputRef} type="file" accept="image/jpeg,image/webp,image/png" onChange={handleFileSelect} className="hidden" />
             <div onClick={() => fileInputRef.current?.click()} className="border-2 border-dashed border-eggshell bg-white rounded-2xl h-36 flex flex-col items-center justify-center cursor-pointer hover:border-gold hover:bg-gray-50/50 group relative overflow-hidden transition-all duration-300">
               {imagePreview ? <img src={imagePreview} alt="Preview" className="w-full h-full object-cover absolute inset-0" /> : <ImagePlus className="text-3xl text-gray-300 group-hover:text-gold transition-all duration-300 mb-2" />}
@@ -113,7 +113,7 @@ export function EditPost({ post, onClose, onUpdated }: Props) {
           </div>
 
           <div>
-            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Contenido Editorial</label>
+            <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Contenido Editorial</label>
             <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={5} className="w-full bg-white rounded-xl border border-gray-200 focus:border-gold focus:bg-gray-50/30 outline-hidden p-5 text-gray-700 leading-relaxed transition-all duration-300 resize-none" required />
           </div>
 

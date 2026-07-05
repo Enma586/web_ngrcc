@@ -21,7 +21,7 @@ export function PostCard({ post, onClick }: Props) {
           />
         </div>
         <div className="space-y-1 md:space-y-2 min-w-0">
-          <span className="text-gold text-[10px] font-bold uppercase tracking-[0.3em]">
+          <span className="text-gold text-[11px] font-bold uppercase tracking-[0.3em]">
             {new Date(post.createdAt).toLocaleDateString('es-ES', {
               day: 'numeric', month: 'long', year: 'numeric'
             })}

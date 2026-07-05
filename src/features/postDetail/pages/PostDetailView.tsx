@@ -45,14 +45,14 @@ export default function PostDetailView({ post, onBack, onNavigate }: Props) {
       <header className="sticky top-0 z-50 px-4 md:px-12 py-4 flex items-center justify-between glass-nav">
         <button
           onClick={onBack}
-          className="group inline-flex items-center text-[10px] uppercase tracking-[0.2em] text-charcoal/60 hover:text-charcoal transition-all duration-300 cursor-pointer"
+          className="group inline-flex items-center text-[11px] uppercase tracking-[0.2em] text-charcoal/60 hover:text-charcoal transition-all duration-300 cursor-pointer"
         >
           <ArrowLeft className="text-lg mr-3 transition-transform group-hover:-translate-x-1.5" />
           <span className="hidden sm:inline">Volver al Inicio</span>
         </button>
         <div className="hidden md:flex flex-col items-center">
           <span className="font-serif italic text-lg text-charcoal leading-none">Grupo Juvenil</span>
-          <span className="text-[9px] uppercase tracking-[0.4em] text-gold mt-1 font-bold">Nueva Generación</span>
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold mt-1 font-bold">Nueva Generación</span>
         </div>
         <button
           onClick={handleShare}
@@ -74,7 +74,7 @@ export default function PostDetailView({ post, onBack, onNavigate }: Props) {
           </div>
         </div>
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-8 text-charcoal/80 text-[10px] md:text-xs font-bold uppercase tracking-[0.4em]">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-8 text-charcoal/80 text-[11px] md:text-xs font-bold uppercase tracking-[0.4em]">
             <span className="text-gold">
               {post.postType === 'evento' ? 'Próximos Eventos' : 'Crónicas de Fe'}
             </span>
@@ -102,9 +102,9 @@ export default function PostDetailView({ post, onBack, onNavigate }: Props) {
 
         <div className="border-t border-eggshell pt-8 md:pt-12 mt-12 md:mt-20">
           <div className="flex flex-wrap gap-2 md:gap-3 mb-12 md:mb-16">
-            <span className="px-4 md:px-5 py-2 bg-eggshell/40 rounded-full text-[10px] font-bold uppercase tracking-widest text-charcoal/70 hover:bg-gold/10 transition-colors cursor-pointer">Comunidad</span>
-            <span className="px-4 md:px-5 py-2 bg-eggshell/40 rounded-full text-[10px] font-bold uppercase tracking-widest text-charcoal/70 hover:bg-gold/10 transition-colors cursor-pointer">Fe</span>
-            <span className="px-4 md:px-5 py-2 bg-eggshell/40 rounded-full text-[10px] font-bold uppercase tracking-widest text-charcoal/70 hover:bg-gold/10 transition-colors cursor-pointer">Juventud</span>
+            <span className="px-4 md:px-5 py-2 bg-eggshell/40 rounded-full text-[11px] font-bold uppercase tracking-widest text-charcoal/70 hover:bg-gold/10 transition-colors cursor-pointer">Comunidad</span>
+            <span className="px-4 md:px-5 py-2 bg-eggshell/40 rounded-full text-[11px] font-bold uppercase tracking-widest text-charcoal/70 hover:bg-gold/10 transition-colors cursor-pointer">Fe</span>
+            <span className="px-4 md:px-5 py-2 bg-eggshell/40 rounded-full text-[11px] font-bold uppercase tracking-widest text-charcoal/70 hover:bg-gold/10 transition-colors cursor-pointer">Juventud</span>
           </div>
 
           {(prevPost || nextPost) && (
@@ -114,7 +114,7 @@ export default function PostDetailView({ post, onBack, onNavigate }: Props) {
                   onClick={() => onNavigate?.(prevPost)}
                   className="group p-6 md:p-8 bg-eggshell/20 rounded-3xl border border-eggshell hover:border-gold/30 transition-colors text-left cursor-pointer"
                 >
-                  <p className="text-charcoal/40 text-[9px] font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
+                  <p className="text-charcoal/40 text-[10px] font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
                     <ArrowLeft className="w-3 h-3" /> Anterior
                   </p>
                   <h4 className="font-serif text-lg md:text-2xl group-hover:text-gold transition-colors truncate">
@@ -127,7 +127,7 @@ export default function PostDetailView({ post, onBack, onNavigate }: Props) {
                   onClick={() => onNavigate?.(nextPost)}
                   className="group p-6 md:p-8 bg-eggshell/20 rounded-3xl border border-eggshell hover:border-gold/30 transition-colors text-right cursor-pointer"
                 >
-                  <p className="text-charcoal/40 text-[9px] font-bold uppercase tracking-[0.3em] mb-4 flex items-center justify-end gap-2">
+                  <p className="text-charcoal/40 text-[10px] font-bold uppercase tracking-[0.3em] mb-4 flex items-center justify-end gap-2">
                     Siguiente <ArrowRight className="w-3 h-3" />
                   </p>
                   <h4 className="font-serif text-lg md:text-2xl group-hover:text-gold transition-colors truncate">
@@ -152,7 +152,7 @@ export default function PostDetailView({ post, onBack, onNavigate }: Props) {
             </p>
           </div>
           <div className="w-full h-px bg-charcoal/5 my-12 md:my-20" />
-          <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-4 md:gap-6 text-[9px] uppercase tracking-[0.3em] text-charcoal/80">
+          <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-4 md:gap-6 text-[10px] uppercase tracking-[0.3em] text-charcoal/80">
             <p>&copy; 2024 Grupo Juvenil Nueva Generación. Todos los derechos reservados.</p>
             <div className="flex gap-8 md:gap-10">
               <button className="hover:text-gold transition-colors cursor-pointer">Privacidad</button>

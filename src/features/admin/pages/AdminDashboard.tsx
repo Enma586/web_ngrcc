@@ -46,7 +46,7 @@ export default function AdminDashboard({ onClose }: Props) {
 
             <button
               onClick={onClose}
-              className="relative z-10 self-start mb-6 text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal/60 hover:text-charcoal transition-colors cursor-pointer flex items-center gap-2"
+              className="relative z-10 self-start mb-6 text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/60 hover:text-charcoal transition-colors cursor-pointer flex items-center gap-2"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
               Volver al inicio
@@ -58,10 +58,10 @@ export default function AdminDashboard({ onClose }: Props) {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20"/><path d="M2 12h20"/></svg>
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-[9px] text-gold-muted font-extrabold text-white bg-charcoal px-2 py-0.5 rounded tracking-[0.3em] uppercase leading-none mb-2 w-fit">ADMIN CORE</p>
+                  <p className="text-[10px] text-gold-muted font-extrabold text-white bg-charcoal px-2 py-0.5 rounded tracking-[0.3em] uppercase leading-none mb-2 w-fit">ADMIN CORE</p>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-                    <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Servicio En Línea</span>
+                    <span className="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Servicio En Línea</span>
                   </div>
                 </div>
               </div>

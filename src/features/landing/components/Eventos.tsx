@@ -11,7 +11,7 @@ export function Eventos({ eventos, onEventoClick }: Props) {
     <section id="eventos" className="py-20 md:py-32 px-6 md:px-24 border-t border-black/5 bg-eggshell/20 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20 reveal-up">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold">
+          <span className="text-[11px] uppercase tracking-[0.4em] text-gold font-bold">
             Comunidad
           </span>
           <h2 className="font-serif text-4xl md:text-7xl text-charcoal mt-6 mb-6 italic leading-tight">
@@ -41,14 +41,14 @@ export function Eventos({ eventos, onEventoClick }: Props) {
                 <div className="aspect-[16/10] overflow-hidden bg-eggshell relative">
                   <img src={evento.imageUrl} alt={evento.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                   {evento.date && (
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-wider text-gold flex items-center gap-1.5">
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-gold flex items-center gap-1.5">
                       <Calendar className="w-3 h-3" />
                       {new Date(evento.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}
                     </div>
                   )}
                 </div>
                 <div className="p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-3 text-[10px] text-gray-400 font-bold uppercase tracking-wider">
+                  <div className="flex items-center gap-3 mb-3 text-[11px] text-gray-400 font-bold uppercase tracking-wider">
                     {evento.date && (
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />

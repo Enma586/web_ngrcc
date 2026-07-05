@@ -16,9 +16,9 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
           variant === 'default' && 'bg-charcoal text-alabaster hover:bg-black hover:shadow-2xl',
           variant === 'outline' && 'border border-charcoal text-charcoal hover:bg-charcoal hover:text-alabaster',
           variant === 'ghost' && 'text-charcoal/70 hover:text-charcoal',
-          size === 'sm' && 'px-4 py-2 text-[9px]',
-          size === 'md' && 'px-8 py-4 text-[11px]',
-          size === 'lg' && 'px-12 py-6 text-[12px]',
+          size === 'sm' && 'px-4 py-2 text-[10px]',
+          size === 'md' && 'px-8 py-4 text-[12px]',
+          size === 'lg' && 'px-12 py-6 text-[13px]',
           className
         )}
         {...props}

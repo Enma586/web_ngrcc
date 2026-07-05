@@ -44,13 +44,13 @@ export function ConfirmModal({ isOpen, title, message, confirmLabel = 'Eliminar'
         <div className="flex gap-4">
           <button
             onClick={onCancel}
-            className="flex-1 py-3.5 rounded-xl border border-gray-200 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:bg-gray-50 transition-all cursor-pointer"
+            className="flex-1 py-3.5 rounded-xl border border-gray-200 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:bg-gray-50 transition-all cursor-pointer"
           >
             Cancelar
           </button>
           <button
             onClick={onConfirm}
-            className="flex-1 py-3.5 rounded-xl bg-red-500 text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-red-600 transition-all cursor-pointer"
+            className="flex-1 py-3.5 rounded-xl bg-red-500 text-white text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-red-600 transition-all cursor-pointer"
           >
             {confirmLabel}
           </button>

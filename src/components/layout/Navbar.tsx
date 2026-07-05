@@ -86,30 +86,30 @@ export function Navbar({ onLoginClick, onAdminClick, className }: Props) {
             </button>
           </div>
           <div className="flex flex-col border-l border-black/10 pl-4 md:pl-6">
-            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] font-bold text-gold leading-tight">
+            <span className="text-[10px] md:text-[11px] uppercase tracking-[0.5em] font-bold text-gold leading-tight">
               Grupo Juvenil
             </span>
-            <span className="text-[11px] md:text-[14px] uppercase tracking-[0.2em] font-bold text-charcoal leading-tight">
+            <span className="text-[12px] md:text-[14px] uppercase tracking-[0.2em] font-bold text-charcoal leading-tight">
               Nueva Generación
             </span>
           </div>
         </div>
 
         <div className="hidden lg:flex items-center gap-12">
-          <a href="#" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal">Inicio</a>
-          <a href="#mision" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal">Misión</a>
-          <a href="#feed" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal">Crónicas</a>
-          <a href="#eventos" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal">Eventos</a>
-          <a href="#contacto" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal">Contacto</a>
+          <a href="#" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal">Inicio</a>
+          <a href="#mision" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal">Misión</a>
+          <a href="#feed" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal">Crónicas</a>
+          <a href="#eventos" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal">Eventos</a>
+          <a href="#contacto" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal">Contacto</a>
         </div>
 
         <div className="flex items-center gap-4">
           {isAuthenticated && (
             <>
-              <button onClick={() => { closeMenu(); onAdminClick() }} className="hidden lg:inline-flex btn-sweep px-4 md:px-6 py-2 md:py-3 border border-charcoal text-[10px] uppercase tracking-[0.3em] font-bold cursor-pointer">
+              <button onClick={() => { closeMenu(); onAdminClick() }} className="hidden lg:inline-flex btn-sweep px-4 md:px-6 py-2 md:py-3 border border-charcoal text-[11px] uppercase tracking-[0.3em] font-bold cursor-pointer">
                 <span className="relative z-10">+ Crear Post</span>
               </button>
-              <button onClick={() => { closeMenu(); logout() }} className="hidden lg:inline-block text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer">
+              <button onClick={() => { closeMenu(); logout() }} className="hidden lg:inline-block text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer">
                 Salir
               </button>
             </>
@@ -137,17 +137,17 @@ export function Navbar({ onLoginClick, onAdminClick, className }: Props) {
 
       {menuOpen && (
         <div className="lg:hidden mt-6 pt-6 border-t border-black/5 flex flex-col gap-4 animate-in">
-          <a href="#" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Inicio</a>
-          <a href="#mision" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Misión</a>
-          <a href="#feed" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Crónicas</a>
-          <a href="#eventos" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Eventos</a>
-          <a href="#contacto" onClick={closeMenu} className="nav-link text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Contacto</a>
+          <a href="#" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Inicio</a>
+          <a href="#mision" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Misión</a>
+          <a href="#feed" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Crónicas</a>
+          <a href="#eventos" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Eventos</a>
+          <a href="#contacto" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Contacto</a>
           {isAuthenticated && (
             <div className="flex gap-4 pt-4 border-t border-black/5">
-              <button onClick={() => { closeMenu(); onAdminClick() }} className="btn-sweep px-6 py-3 border border-charcoal text-[10px] uppercase tracking-[0.3em] font-bold cursor-pointer flex-1 text-center">
+              <button onClick={() => { closeMenu(); onAdminClick() }} className="btn-sweep px-6 py-3 border border-charcoal text-[11px] uppercase tracking-[0.3em] font-bold cursor-pointer flex-1 text-center">
                 <span className="relative z-10">+ Crear Post</span>
               </button>
-              <button onClick={() => { closeMenu(); logout() }} className="text-[10px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer flex-1">
+              <button onClick={() => { closeMenu(); logout() }} className="text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer flex-1">
                 Salir
               </button>
             </div>

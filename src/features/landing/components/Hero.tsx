@@ -22,7 +22,7 @@ export function Hero() {
               </span>
             </h1>
             <div className="overflow-hidden mt-6 md:mt-10">
-              <p className="title-line text-[10px] md:text-[11px] uppercase tracking-[0.7em] font-medium text-gray-400 ml-2">
+              <p className="title-line text-[11px] md:text-[12px] uppercase tracking-[0.7em] font-medium text-gray-400 ml-2">
                 Caminando juntos en la fe
               </p>
             </div>
@@ -39,7 +39,7 @@ export function Hero() {
             <div className="flex items-center gap-8 pt-2 md:pt-4">
               <a
                 href="#feed"
-                className="btn-sweep inline-block px-6 md:px-8 py-3 md:py-4 border border-charcoal text-[10px] uppercase tracking-[0.3em] font-bold"
+                className="btn-sweep inline-block px-6 md:px-8 py-3 md:py-4 border border-charcoal text-[11px] uppercase tracking-[0.3em] font-bold"
               >
                 Explorar Crónicas
               </a>

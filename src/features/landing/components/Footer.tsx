@@ -17,7 +17,7 @@ export function Footer() {
                   <h4 className="text-3xl md:text-6xl font-serif italic leading-tight text-charcoal">
                     &ldquo;Donde hay amor y caridad, allí está Dios.&rdquo;
                   </h4>
-                  <p className="text-[10px] md:text-[11px] uppercase tracking-[0.6em] text-gold font-bold">
+                  <p className="text-[11px] md:text-[12px] uppercase tracking-[0.6em] text-gold font-bold">
                     Dios siempre nos espera.
                   </p>
                 </div>
@@ -36,19 +36,19 @@ export function Footer() {
                 </div>
 
                 <a href="#contacto" className="btn-sweep inline-flex items-center gap-4 md:gap-6 px-8 md:px-12 py-5 md:py-8 border border-charcoal transition-transform hover:scale-105 active:scale-95 group">
-                  <span className="text-[11px] md:text-[12px] uppercase tracking-[0.4em] font-bold">Solicitar Ayuda</span>
+                  <span className="text-[12px] md:text-[13px] uppercase tracking-[0.4em] font-bold">Solicitar Ayuda</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
               </div>
 
               <div className="mt-16 md:mt-24 w-full text-left lg:text-right">
-                <p className="text-[10px] uppercase tracking-[0.5em] font-bold text-gold mb-2">Grupo Juvenil Nueva Generación</p>
-                <p className="text-[9px] uppercase tracking-[0.3em] text-gray-400">RCC SAMC &bull; Renovación Carismática Católica</p>
+                <p className="text-[11px] uppercase tracking-[0.5em] font-bold text-gold mb-2">Grupo Juvenil Nueva Generación</p>
+                <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400">RCC SAMC &bull; Renovación Carismática Católica</p>
               </div>
             </div>
           </div>
 
-          <div className="pt-12 md:pt-24 border-t border-black/5 w-full flex flex-col md:flex-row justify-between items-center text-[9px] text-gray-400 uppercase tracking-[0.4em] font-bold gap-6 md:gap-0">
+          <div className="pt-12 md:pt-24 border-t border-black/5 w-full flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400 uppercase tracking-[0.4em] font-bold gap-6 md:gap-0">
             <p>&copy; 2024 Grupo Juvenil Nueva Generación. Caminando en la Fe.</p>
             <div className="flex gap-8 md:gap-12">
               <button onClick={() => setShowInfo(true)} className="hover:text-gold transition-colors cursor-pointer">Aviso Legal</button>

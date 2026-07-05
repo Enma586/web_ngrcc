@@ -4,7 +4,7 @@ export function Contacto() {
   return (
     <section id="contacto" className="py-20 md:py-32 px-6 md:px-24 bg-white/30 border-t border-black/5 scroll-mt-24">
       <div className="max-w-4xl mx-auto text-center">
-        <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold">
+        <span className="text-[11px] uppercase tracking-[0.4em] text-gold font-bold">
           Contacto
         </span>
         <h2 className="font-serif text-4xl md:text-7xl text-charcoal mt-6 mb-8 italic leading-tight">

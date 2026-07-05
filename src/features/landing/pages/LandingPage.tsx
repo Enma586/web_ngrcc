@@ -25,10 +25,15 @@ export default function LandingPage({ onPostClick }: Props) {
   return (
     <main className="min-h-screen bg-alabaster text-charcoal font-sans overflow-x-clip selection:bg-gold selection:text-white">
       <Hero />
+      <div className="section-divider" />
       <Mission />
+      <div className="section-divider" />
       <Feed posts={crónicas} onPostClick={onPostClick} />
+      <div className="section-divider" />
       <Eventos eventos={eventos} onEventoClick={onPostClick} />
+      <div className="section-divider" />
       <Contacto />
+      <div className="section-divider" />
       <Footer />
     </main>
   )
