@@ -15,7 +15,6 @@ export default function LandingPage() {
   const navigate = useNavigate()
   const { openLogin } = useAuthStore()
   const [posts, setPosts] = useState<Post[]>([])
-  const [now] = useState(Date.now)
 
   useEffect(() => {
     postService.getAllPosts().then(setPosts).catch(() => {})
@@ -26,8 +25,14 @@ export default function LandingPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const eventos = posts.filter((p) => p.postType === 'evento' && (!p.date || p.date > now))
-  const crónicas = posts.filter((p) => p.postType === 'post')
+  const todayStart = new Date()
+  todayStart.setHours(0, 0, 0, 0)
+  const eventos = posts.filter(
+    (p) => p.postType === 'evento' && (!p.date || new Date(p.date) >= todayStart)
+  )
+  const crónicas = [...posts.filter((p) => p.postType === 'post')].sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  )
 
   return (
     <main className="min-h-screen bg-alabaster text-charcoal font-sans overflow-x-clip selection:bg-gold selection:text-white">

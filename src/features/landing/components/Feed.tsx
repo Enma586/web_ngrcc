@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import type { Post } from '@/types'
 import { PostCard } from './PostCard'
 
@@ -7,8 +8,12 @@ interface Props {
 }
 
 export function Feed({ posts, onPostClick }: Props) {
-  const mainPost = posts[0]
-  const sidePosts = posts.slice(1, 3)
+  const navigate = useNavigate()
+  const sorted = [...posts].sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  )
+  const mainPost = sorted[0]
+  const sidePosts = sorted.slice(1, 3)
 
   return (
     <section id="feed" className="py-20 md:py-40 px-6 md:px-24 scroll-mt-24">
@@ -24,12 +29,12 @@ export function Feed({ posts, onPostClick }: Props) {
             </p>
           </div>
           <div className="lg:col-span-4 lg:text-right pb-2 md:pb-4">
-            <a
-              href="#"
-              className="text-[11px] uppercase tracking-[0.4em] font-bold border-b border-gold pb-2 hover:text-gold transition-colors"
+            <button
+              onClick={() => navigate('/archivo')}
+              className="text-[11px] uppercase tracking-[0.4em] font-bold border-b border-gold pb-2 hover:text-gold transition-colors cursor-pointer"
             >
               Archivo Completo
-            </a>
+            </button>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 import { useState, useRef, type ChangeEvent } from 'react'
 import { cloudinaryService } from '@/lib/cloudinary'
 import { postService } from '../services/post.service'
-import { ImagePlus, ArrowRight, Cloud, Check, Loader2 } from 'lucide-react'
+import { ArrowRight, Cloud, Check, Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
 
 function todayStr() {
@@ -113,12 +113,12 @@ export function CreatePost({ onCreated }: { onCreated: () => void }) {
         <div>
           <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Imagen de Portada</label>
           <input ref={fileInputRef} type="file" accept="image/jpeg,image/webp,image/png" onChange={handleFileSelect} className="hidden" />
-          <div onClick={() => fileInputRef.current?.click()} className="border-2 border-dashed border-eggshell bg-white rounded-2xl h-44 flex flex-col items-center justify-center cursor-pointer hover:border-gold hover:bg-gray-50/50 group relative overflow-hidden transition-all duration-300">
+          <div onClick={() => fileInputRef.current?.click()} className="relative bg-white rounded-2xl h-44 flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-gold/20 hover:border-gold hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent group overflow-hidden transition-all duration-300">
             {imagePreview ? (
               <img src={imagePreview} alt="Preview" className="w-full h-full object-cover absolute inset-0" />
             ) : (
               <div className="flex flex-col items-center text-center px-6 z-10">
-                <ImagePlus className="text-4xl text-gray-300 group-hover:text-gold group-hover:-translate-y-1 transition-all duration-300 mb-3" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-300 group-hover:text-gold mb-3 transition-all duration-300"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                 <span className="text-sm font-medium text-gray-600 mb-1">Cargar Archivo</span>
                 <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Formatos: JPG, WEBP, PNG (5MB)</span>
               </div>
@@ -132,8 +132,8 @@ export function CreatePost({ onCreated }: { onCreated: () => void }) {
         </div>
 
         <div className="pt-4">
-          <button type="submit" disabled={isUploading || !title || !description || !imageFile} className="w-full bg-charcoal text-alabaster py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs hover:bg-black hover:shadow-2xl cursor-pointer flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed">
-            {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : statusText === '¡Éxito!' ? <Check className="w-4 h-4 text-green-400" /> : null}
+          <button type="submit" disabled={isUploading || !title || !description || !imageFile} className="w-full bg-gradient-to-r from-gold-muted to-rose text-white py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs shadow-lg hover:shadow-rose/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed">
+            {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : statusText === '¡Éxito!' ? <Check className="w-4 h-4 text-white" /> : null}
             <span>{statusText}</span>
             {!isUploading && statusText === 'Publicar Contenido' && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />}
           </button>

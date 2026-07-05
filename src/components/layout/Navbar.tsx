@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '@/store'
 import { cn } from '@/lib/utils'
@@ -9,6 +9,15 @@ interface Props {
 }
 
 export function Navbar({ onLoginClick, className }: Props) {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
   const navigate = useNavigate()
   const { isAuthenticated, logout } = useAuthStore()
   const [menuOpen, setMenuOpen] = useState(false)
@@ -59,8 +68,8 @@ export function Navbar({ onLoginClick, className }: Props) {
     <nav
       id="navbar"
       className={cn(
-        'sticky top-0 left-0 w-full z-50 px-6 md:px-12 py-6 md:py-8',
-        'bg-alabaster border-b border-black/5',
+        'sticky top-0 left-0 w-full z-50 px-6 md:px-12 py-6 md:py-8 transition-all duration-300',
+        scrolled ? 'bg-alabaster/90 backdrop-blur-lg shadow-xs border-b border-gold/10' : 'bg-alabaster border-b border-black/5',
         className
       )}
     >
@@ -118,8 +127,9 @@ export function Navbar({ onLoginClick, className }: Props) {
         <div className="flex items-center gap-4">
           {isAuthenticated && (
             <>
-              <button onClick={handleAdminClick} className="hidden lg:inline-flex btn-sweep px-4 md:px-6 py-2 md:py-3 border border-charcoal text-[11px] uppercase tracking-[0.3em] font-bold cursor-pointer">
-                <span className="relative z-10">+ Crear Post</span>
+              <button onClick={handleAdminClick} className="hidden lg:inline-flex items-center gap-2 px-5 md:px-7 py-2 md:py-3 bg-gradient-to-r from-gold-muted to-rose text-white text-[11px] uppercase tracking-[0.3em] font-bold rounded-xl shadow-lg hover:shadow-rose/25 hover:scale-105 transition-all duration-300 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Publicar</span>
               </button>
               <button onClick={handleLogout} className="hidden lg:inline-block text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer">
                 Salir
@@ -156,8 +166,9 @@ export function Navbar({ onLoginClick, className }: Props) {
           <a href="#contacto" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Contacto</a>
           {isAuthenticated && (
             <div className="flex gap-4 pt-4 border-t border-black/5">
-              <button onClick={handleAdminClick} className="btn-sweep px-6 py-3 border border-charcoal text-[11px] uppercase tracking-[0.3em] font-bold cursor-pointer flex-1 text-center">
-                <span className="relative z-10">+ Crear Post</span>
+              <button onClick={handleAdminClick} className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-muted to-rose text-white text-[11px] uppercase tracking-[0.3em] font-bold rounded-xl shadow-lg hover:shadow-rose/25 hover:scale-105 transition-all duration-300 cursor-pointer flex-1 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Publicar</span>
               </button>
               <button onClick={handleLogout} className="text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer flex-1">
                 Salir

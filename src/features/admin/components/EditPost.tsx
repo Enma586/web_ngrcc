@@ -1,7 +1,7 @@
 import { useState, useRef, type ChangeEvent } from 'react'
 import { cloudinaryService } from '@/lib/cloudinary'
 import { postService } from '../services/post.service'
-import { ImagePlus, ArrowRight, Loader2, X } from 'lucide-react'
+import { ArrowRight, Loader2, X } from 'lucide-react'
 import { toast } from 'sonner'
 import type { Post } from '@/types'
 
@@ -107,8 +107,10 @@ export function EditPost({ post, onClose, onUpdated }: Props) {
           <div>
             <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Imagen</label>
             <input ref={fileInputRef} type="file" accept="image/jpeg,image/webp,image/png" onChange={handleFileSelect} className="hidden" />
-            <div onClick={() => fileInputRef.current?.click()} className="border-2 border-dashed border-eggshell bg-white rounded-2xl h-36 flex flex-col items-center justify-center cursor-pointer hover:border-gold hover:bg-gray-50/50 group relative overflow-hidden transition-all duration-300">
-              {imagePreview ? <img src={imagePreview} alt="Preview" className="w-full h-full object-cover absolute inset-0" /> : <ImagePlus className="text-3xl text-gray-300 group-hover:text-gold transition-all duration-300 mb-2" />}
+            <div onClick={() => fileInputRef.current?.click()} className="relative bg-white rounded-2xl h-36 flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-gold/20 hover:border-gold hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent group overflow-hidden transition-all duration-300">
+              {imagePreview ? <img src={imagePreview} alt="Preview" className="w-full h-full object-cover absolute inset-0" /> : (
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-300 group-hover:text-gold transition-all duration-300"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              )}
             </div>
           </div>
 
@@ -117,7 +119,7 @@ export function EditPost({ post, onClose, onUpdated }: Props) {
             <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={5} className="w-full bg-white rounded-xl border border-gray-200 focus:border-gold focus:bg-gray-50/30 outline-hidden p-5 text-gray-700 leading-relaxed transition-all duration-300 resize-none" required />
           </div>
 
-          <button type="submit" disabled={isUploading} className="w-full bg-charcoal text-alabaster py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs hover:bg-black hover:shadow-2xl cursor-pointer flex items-center justify-center gap-3 disabled:opacity-50">
+          <button type="submit" disabled={isUploading} className="w-full bg-gradient-to-r from-gold-muted to-rose text-white py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs shadow-lg hover:shadow-rose/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer flex items-center justify-center gap-3 disabled:opacity-50">
             {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
             <span>{isUploading ? 'Guardando...' : 'Guardar Cambios'}</span>
             {!isUploading && <ArrowRight className="w-4 h-4" />}

@@ -7,7 +7,7 @@ export function Footer() {
 
   return (
     <>
-      <footer className="bg-alabaster py-20 md:py-40 px-6 md:px-24 border-t border-black/5 relative overflow-hidden">
+      <footer className="bg-alabaster py-20 md:py-40 px-6 md:px-24 border-t-2 border-black/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 lg:gap-32">
             <div className="lg:col-span-7 space-y-12 md:space-y-20">

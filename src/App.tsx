@@ -7,6 +7,7 @@ import { useAuthStore } from '@/store'
 import LandingPage from '@/features/landing/pages/LandingPage'
 import AdminDashboard from '@/features/admin/pages/AdminDashboard'
 import PostDetailView from '@/features/postDetail/pages/PostDetailView'
+import ArchivePage from '@/features/archive/pages/ArchivePage'
 
 export default function App() {
   useAuth()
@@ -17,6 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/post/:id" element={<PostDetailView />} />
+        <Route path="/archivo" element={<ArchivePage />} />
         <Route
           path="/admin"
           element={

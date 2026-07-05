@@ -1,7 +1,7 @@
 export function Hero() {
   return (
     <header className="relative min-h-screen flex flex-col justify-end px-6 md:px-24 pb-16 md:pb-24 overflow-hidden">
-      <div className="hero-bg-text font-serif select-none pointer-events-none">NG</div>
+      <div className="hero-bg-text" aria-hidden="true">NG</div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 relative z-10 items-end">
         <div className="lg:col-span-9">
@@ -17,7 +17,7 @@ export function Hero() {
               </span>
               <span className="block overflow-hidden">
                 <span className="block title-line italic font-light opacity-80 pl-0 md:pl-24">
-                  Generación
+                  <span className="title-underline">Generación</span>
                 </span>
               </span>
             </h1>
