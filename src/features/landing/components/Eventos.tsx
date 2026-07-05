@@ -8,13 +8,13 @@ interface Props {
 
 export function Eventos({ eventos, onEventoClick }: Props) {
   return (
-    <section id="eventos" className="py-20 md:py-32 px-6 md:px-24 border-t border-black/5 bg-[#F0EAD6]/20 scroll-mt-24">
+    <section id="eventos" className="py-20 md:py-32 px-6 md:px-24 border-t border-black/5 bg-eggshell/20 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20 reveal-up">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-[#D4AF37] font-bold">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold">
             Comunidad
           </span>
-          <h2 className="font-serif text-4xl md:text-7xl text-[#3B3C36] mt-6 mb-6 italic leading-tight">
+          <h2 className="font-serif text-4xl md:text-7xl text-charcoal mt-6 mb-6 italic leading-tight">
             Próximos <span className="not-italic font-bold">Eventos</span>
           </h2>
           <p className="text-gray-500 text-lg md:text-xl font-light max-w-xl mx-auto leading-relaxed">
@@ -24,7 +24,7 @@ export function Eventos({ eventos, onEventoClick }: Props) {
 
         {eventos.length === 0 ? (
           <div className="text-center py-20 reveal-up">
-            <Calendar className="w-16 h-16 text-[#D4AF37]/30 mx-auto mb-6" />
+            <Calendar className="w-16 h-16 text-gold/30 mx-auto mb-6" />
             <p className="font-serif text-3xl md:text-4xl italic text-gray-400">No hay eventos programados</p>
             <p className="text-gray-400 text-sm mt-4 font-light">
               Pronto estaremos anunciando nuevas actividades. ¡Mantente atento!
@@ -36,12 +36,12 @@ export function Eventos({ eventos, onEventoClick }: Props) {
               <article
                 key={evento.id}
                 onClick={() => onEventoClick(evento)}
-                className="group bg-white rounded-3xl overflow-hidden border border-[#F0EAD6] hover:border-[#D4AF37]/30 hover:shadow-xl transition-all duration-500 cursor-pointer reveal-up"
+                className="group bg-white rounded-3xl overflow-hidden border border-eggshell hover:border-gold/30 hover:shadow-xl transition-all duration-500 cursor-pointer reveal-up"
               >
-                <div className="aspect-[16/10] overflow-hidden bg-[#F0EAD6] relative">
+                <div className="aspect-[16/10] overflow-hidden bg-eggshell relative">
                   <img src={evento.imageUrl} alt={evento.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                   {evento.date && (
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-wider text-[#D4AF37] flex items-center gap-1.5">
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-wider text-gold flex items-center gap-1.5">
                       <Calendar className="w-3 h-3" />
                       {new Date(evento.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}
                     </div>
@@ -62,7 +62,7 @@ export function Eventos({ eventos, onEventoClick }: Props) {
                       </span>
                     )}
                   </div>
-                  <h3 className="font-serif text-2xl md:text-3xl font-semibold text-[#3B3C36] leading-tight mb-3 group-hover:text-[#D4AF37] transition-colors duration-300">
+                  <h3 className="font-serif text-2xl md:text-3xl font-semibold text-charcoal leading-tight mb-3 group-hover:text-gold transition-colors duration-300">
                     {evento.title}
                   </h3>
                   <p className="text-gray-500 font-light text-sm leading-relaxed line-clamp-3">

@@ -31,7 +31,7 @@ export function Modal({ isOpen, onClose, children, className, fullScreen }: Prop
 
   if (fullScreen) {
     return (
-      <div className="fixed inset-0 z-[100] bg-[#FAFAF7] overflow-y-auto">
+      <div className="fixed inset-0 z-[100] bg-alabaster overflow-y-auto">
         <div className="min-h-screen flex items-center justify-center p-6">
           <div className={cn('w-full max-w-[420px]', className)}>
             {children}

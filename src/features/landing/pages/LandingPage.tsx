@@ -23,7 +23,7 @@ export default function LandingPage({ onPostClick }: Props) {
   const crónicas = posts.filter((p) => p.postType === 'post')
 
   return (
-    <main className="min-h-screen bg-[#FAFAF7] text-[#3B3C36] font-sans overflow-x-clip selection:bg-[#D4AF37] selection:text-white">
+    <main className="min-h-screen bg-alabaster text-charcoal font-sans overflow-x-clip selection:bg-gold selection:text-white">
       <Hero />
       <Mission />
       <Feed posts={crónicas} onPostClick={onPostClick} />

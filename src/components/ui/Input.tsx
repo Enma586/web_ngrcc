@@ -15,8 +15,8 @@ export const Input = forwardRef<HTMLInputElement, Props>(
           id={id}
           placeholder={placeholder}
           className={cn(
-            'floating-input w-full bg-transparent border-b border-[#3B3C36]/15 py-3 outline-hidden text-[15px] transition-colors duration-500',
-            'focus:border-[#D4AF37]',
+            'floating-input w-full bg-transparent border-b border-charcoal/15 py-3 outline-hidden text-[15px] transition-colors duration-500',
+            'focus:border-gold',
             className
           )}
           {...props}
@@ -24,7 +24,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
         {label && (
           <label
             htmlFor={id}
-            className="floating-label absolute left-0 top-3 pointer-events-none text-[13px] text-[#3B3C36]/70"
+            className="floating-label absolute left-0 top-3 pointer-events-none text-[13px] text-charcoal/70"
           >
             {label}
           </label>

@@ -25,14 +25,14 @@ export default function App() {
 
   if (activePost) {
     return (
-      <div className="bg-[#FAFAF7]">
+      <div className="bg-alabaster">
         <PostDetailView post={activePost} onBack={handleBack} onNavigate={handlePostClick} />
       </div>
     )
   }
 
   return (
-    <div className="bg-[#FAFAF7]">
+    <div className="bg-alabaster">
       <Navbar
         onLoginClick={openLogin}
         onAdminClick={openAdmin}

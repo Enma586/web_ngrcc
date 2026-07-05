@@ -35,27 +35,27 @@ export function LoginModal({ onClose, onSuccess }: Props) {
   return (
     <div className="relative z-10 flex flex-col items-center mx-auto">
       <div className="text-center mb-12 md:mb-16 space-y-4">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20">
-          <Church className="w-9 h-9 text-[#D4AF37]" />
+        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gold/10 border border-gold/20">
+          <Church className="w-9 h-9 text-gold" />
         </div>
         <div className="space-y-2">
-          <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-[#B89B30]">
+          <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-gold-muted">
             Iglesia Católica San Antonio Maria Claret
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl leading-tight font-medium text-[#3B3C36] tracking-tight">
+          <h1 className="font-serif text-4xl md:text-5xl leading-tight font-medium text-charcoal tracking-tight">
             Grupo Juvenil<br />
             <span className="italic font-light">Nueva Generación</span>
           </h1>
         </div>
-        <div className="w-16 h-px bg-[#D4AF37]/40 mx-auto mt-6" />
+        <div className="w-16 h-px bg-gold/40 mx-auto mt-6" />
       </div>
 
       <div className="w-full">
         <div className="mb-10 md:mb-12">
-          <h2 className="font-serif text-2xl tracking-tight text-[#3B3C36]/90 text-center">
+          <h2 className="font-serif text-2xl tracking-tight text-charcoal/90 text-center">
             Área Reservada
           </h2>
-          <p className="text-[10px] uppercase tracking-[0.2em] text-[#3B3C36]/60 mt-2 text-center font-medium">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-charcoal/60 mt-2 text-center font-medium">
             Acceso al Sistema Sacramental
           </p>
         </div>
@@ -75,11 +75,11 @@ export function LoginModal({ onClose, onSuccess }: Props) {
               onChange={(e) => setEmail(e.target.value)}
               placeholder=" "
               required
-              className="floating-input w-full bg-transparent border-b border-[#3B3C36]/15 py-3 outline-hidden focus:border-[#D4AF37] transition-colors duration-500 text-[15px]"
+              className="floating-input w-full bg-transparent border-b border-charcoal/15 py-3 outline-hidden focus:border-gold transition-colors duration-500 text-[15px]"
             />
             <label
               htmlFor="email"
-              className="floating-label absolute left-0 top-3 pointer-events-none text-[13px] text-[#3B3C36]/70"
+              className="floating-label absolute left-0 top-3 pointer-events-none text-[13px] text-charcoal/70"
             >
               Correo Institucional
             </label>
@@ -96,11 +96,11 @@ export function LoginModal({ onClose, onSuccess }: Props) {
               onChange={(e) => setPassword(e.target.value)}
               placeholder=" "
               required
-              className="floating-input w-full bg-transparent border-b border-[#3B3C36]/15 py-3 outline-hidden focus:border-[#D4AF37] transition-colors duration-500 text-[15px]"
+              className="floating-input w-full bg-transparent border-b border-charcoal/15 py-3 outline-hidden focus:border-gold transition-colors duration-500 text-[15px]"
             />
             <label
               htmlFor="password"
-              className="floating-label absolute left-0 top-3 pointer-events-none text-[13px] text-[#3B3C36]/70"
+              className="floating-label absolute left-0 top-3 pointer-events-none text-[13px] text-charcoal/70"
             >
               Contraseña
             </label>
@@ -113,7 +113,7 @@ export function LoginModal({ onClose, onSuccess }: Props) {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#3B3C36] text-[#FAFAF7] py-5 px-8 rounded-xl flex items-center justify-center gap-4 group relative overflow-hidden cursor-pointer hover:shadow-2xl hover:shadow-[#3B3C36]/20 active:scale-[0.99] transition-shadow duration-300 disabled:opacity-70"
+              className="w-full bg-charcoal text-alabaster py-5 px-8 rounded-xl flex items-center justify-center gap-4 group relative overflow-hidden cursor-pointer hover:shadow-2xl hover:shadow-charcoal/20 active:scale-[0.99] transition-shadow duration-300 disabled:opacity-70"
             >
               <span className="relative z-10 text-[11px] font-bold tracking-[0.2em] uppercase">
                 {isLoading ? 'Verificando...' : 'Iniciar Sesión'}
@@ -126,15 +126,15 @@ export function LoginModal({ onClose, onSuccess }: Props) {
             </button>
 
             <div className="flex items-center gap-3 w-full opacity-15">
-              <div className="h-px grow bg-[#3B3C36]" />
-              <div className="w-1 h-1 rounded-full bg-[#3B3C36]" />
-              <div className="h-px grow bg-[#3B3C36]" />
+              <div className="h-px grow bg-charcoal" />
+              <div className="w-1 h-1 rounded-full bg-charcoal" />
+              <div className="h-px grow bg-charcoal" />
             </div>
           </div>
         </form>
       </div>
 
-      <p className="mt-12 text-[10px] text-[#3B3C36]/40 tracking-tight text-center">
+      <p className="mt-12 text-[10px] text-charcoal/40 tracking-tight text-center">
         Copyright &copy; 2024 Sacramental Management.<br />
         All rights reserved.
       </p>

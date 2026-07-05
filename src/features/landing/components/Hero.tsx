@@ -6,9 +6,9 @@ export function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 relative z-10 items-end">
         <div className="lg:col-span-9">
           <div className="pb-8 md:pb-12">
-            <h1 className="text-5xl md:text-[9rem] font-serif leading-[0.8] text-[#3B3C36]">
+            <h1 className="text-5xl md:text-[9rem] font-serif leading-[0.8] text-charcoal">
               <span className="block overflow-hidden">
-                <span className="block title-line text-lg md:text-4xl uppercase tracking-[0.6em] mb-6 md:mb-12 font-sans font-bold text-[#D4AF37]">
+                <span className="block title-line text-lg md:text-4xl uppercase tracking-[0.6em] mb-6 md:mb-12 font-sans font-bold text-gold">
                   Grupo Juvenil
                 </span>
               </span>
@@ -31,7 +31,7 @@ export function Hero() {
 
         <div className="lg:col-span-4 pb-2 md:pb-4">
           <div className="hero-subtext space-y-6 md:space-y-8 max-w-sm">
-            <div className="w-12 h-px bg-[#D4AF37]" />
+            <div className="w-12 h-px bg-gold" />
             <p className="text-base md:text-lg text-gray-500 leading-relaxed font-light">
               Renovando la fe a través de la comunidad, el servicio y la alegría de la juventud.
               Un espacio para crecer, compartir y transformar.
@@ -39,7 +39,7 @@ export function Hero() {
             <div className="flex items-center gap-8 pt-2 md:pt-4">
               <a
                 href="#feed"
-                className="btn-sweep inline-block px-6 md:px-8 py-3 md:py-4 border border-[#3B3C36] text-[10px] uppercase tracking-[0.3em] font-bold"
+                className="btn-sweep inline-block px-6 md:px-8 py-3 md:py-4 border border-charcoal text-[10px] uppercase tracking-[0.3em] font-bold"
               >
                 Explorar Crónicas
               </a>

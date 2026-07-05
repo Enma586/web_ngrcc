@@ -10,11 +10,11 @@ interface Props {
 
 export function PostList({ posts, onEdit, onDelete, onRefresh }: Props) {
   return (
-    <section className="w-full lg:w-[62%] bg-[#FAFAF7] p-6 md:p-10 flex flex-col overflow-y-auto">
-      <div className="header-animate flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 border-b border-[#F0EAD6] pb-6 md:pb-8 gap-6">
+    <section className="w-full lg:w-[62%] bg-alabaster p-6 md:p-10 flex flex-col overflow-y-auto">
+      <div className="header-animate flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 border-b border-eggshell pb-6 md:pb-8 gap-6">
         <div>
           <div className="flex items-center gap-3 mb-3 flex-wrap">
-            <span className="px-3 py-1 bg-[#D4AF37]/10 text-[#B8860B] text-[10px] font-bold uppercase tracking-[0.2em] rounded-full border border-[#D4AF37]/20">
+            <span className="px-3 py-1 bg-gold/10 text-gold-muted text-[10px] font-bold uppercase tracking-[0.2em] rounded-full border border-gold/20">
               Panel Institucional
             </span>
             <span className="text-gray-300">/</span>
@@ -22,19 +22,19 @@ export function PostList({ posts, onEdit, onDelete, onRefresh }: Props) {
               Nueva Generación
             </span>
           </div>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#3B3C36] tracking-tight">
+          <h2 className="font-serif text-3xl md:text-5xl font-bold text-charcoal tracking-tight">
             Gestión de Contenidos
           </h2>
           <p className="text-sm md:text-base text-gray-500 mt-2 md:mt-3 font-medium flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" className="stroke-gold" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Consola Administrativa de{' '}
-            <span className="text-[#3B3C36] font-bold">Grupo Juvenil Nueva Generación</span>
+            <span className="text-charcoal font-bold">Grupo Juvenil Nueva Generación</span>
           </p>
         </div>
 
         <button
           onClick={onRefresh}
-          className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#D4AF37] hover:text-[#3B3C36] transition-colors cursor-pointer shrink-0"
+          className="text-[10px] uppercase tracking-[0.3em] font-bold text-gold hover:text-charcoal transition-colors cursor-pointer shrink-0"
         >
           ↻ Actualizar
         </button>
@@ -60,12 +60,12 @@ export function PostList({ posts, onEdit, onDelete, onRefresh }: Props) {
         )}
       </div>
 
-      <div className="footer-animate mt-auto pt-8 md:pt-10 border-t border-[#F0EAD6] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="footer-animate mt-auto pt-8 md:pt-10 border-t border-eggshell flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="flex flex-col">
           <span className="text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-1">
             Total Publicaciones
           </span>
-          <span className="text-lg md:text-xl font-serif font-bold text-[#3B3C36]">
+          <span className="text-lg md:text-xl font-serif font-bold text-charcoal">
             {posts.length}
           </span>
         </div>

@@ -35,11 +35,11 @@ export function ConfirmModal({ isOpen, title, message, confirmLabel = 'Eliminar'
       className="fixed inset-0 z-[120] flex items-center justify-center bg-black/40 backdrop-blur-sm p-6"
       onClick={(e) => { if (e.target === e.currentTarget) onCancel() }}
     >
-      <div className="w-full max-w-sm bg-[#FAFAF7] rounded-3xl p-8 md:p-10 border border-white/80 shadow-2xl animate-in text-center">
+      <div className="w-full max-w-sm bg-alabaster rounded-3xl p-8 md:p-10 border border-white/80 shadow-2xl animate-in text-center">
         <div className="mx-auto w-14 h-14 rounded-full bg-red-50 flex items-center justify-center mb-6">
           <AlertTriangle className="w-7 h-7 text-red-500" />
         </div>
-        <h3 className="font-serif text-2xl text-[#3B3C36] mb-3">{title}</h3>
+        <h3 className="font-serif text-2xl text-charcoal mb-3">{title}</h3>
         <p className="text-gray-500 text-sm leading-relaxed mb-8">{message}</p>
         <div className="flex gap-4">
           <button
