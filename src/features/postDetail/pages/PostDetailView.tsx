@@ -1,28 +1,51 @@
 import { ArrowLeft, ArrowRight, Share2 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { toast } from 'sonner'
 import type { Post } from '@/types'
 import { postService } from '@/features/admin/services/post.service'
 
-interface Props {
-  post: Post
-  onBack: () => void
-  onNavigate?: (post: Post) => void
-}
+export default function PostDetailView() {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const { id } = useParams<{ id: string }>()
+  const postFromState = location.state?.post as Post | undefined
 
-export default function PostDetailView({ post, onBack, onNavigate }: Props) {
   const [posts, setPosts] = useState<Post[]>([])
+  const [post, setPost] = useState<Post | null>(postFromState ?? null)
 
-  const sameTypePosts = useMemo(() => posts.filter((p) => p.postType === post.postType), [posts, post.postType])
-  const currentIndex = sameTypePosts.findIndex((p) => p.id === post.id)
-  const prevPost = currentIndex > 0 ? sameTypePosts[currentIndex - 1] : null
-  const nextPost = currentIndex < sameTypePosts.length - 1 ? sameTypePosts[currentIndex + 1] : null
+  useEffect(() => {
+    if (!postFromState && id) {
+      postService.getAllPosts().then((allPosts) => {
+        const found = allPosts.find((p) => p.id === id)
+        if (found) setPost(found)
+      }).catch(() => {})
+    }
+  }, [id, postFromState])
 
   useEffect(() => {
     postService.getAllPosts().then(setPosts).catch(() => {})
-  }, [post.id])
+  }, [post?.id])
+
+  const sameTypePosts = useMemo(
+    () => posts.filter((p) => p.postType === post?.postType),
+    [posts, post?.postType]
+  )
+  const currentIndex = sameTypePosts.findIndex((p) => p.id === post?.id)
+  const prevPost = currentIndex > 0 ? sameTypePosts[currentIndex - 1] : null
+  const nextPost = currentIndex < sameTypePosts.length - 1 ? sameTypePosts[currentIndex + 1] : null
+
+  function handleBack() {
+    navigate('/')
+  }
+
+  function handleNavigate(post: Post) {
+    navigate(`/post/${post.id}`, { state: { post } })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   async function handleShare() {
+    if (!post) return
     const shareText = `${post.title}\n\n${post.description}\n\n— Grupo Juvenil Nueva Generación`
     if (navigator.share) {
       try {
@@ -40,11 +63,22 @@ export default function PostDetailView({ post, onBack, onNavigate }: Props) {
     }
   }
 
+  if (!post) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-alabaster">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-8 h-8 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+          <span className="text-[11px] uppercase tracking-[0.3em] text-charcoal/50 font-bold">Cargando</span>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-alabaster text-charcoal selection:bg-gold selection:text-white">
       <header className="sticky top-0 z-50 px-4 md:px-12 py-4 flex items-center justify-between glass-nav">
         <button
-          onClick={onBack}
+          onClick={handleBack}
           className="group inline-flex items-center text-[11px] uppercase tracking-[0.2em] text-charcoal/60 hover:text-charcoal transition-all duration-300 cursor-pointer"
         >
           <ArrowLeft className="text-lg mr-3 transition-transform group-hover:-translate-x-1.5" />
@@ -111,7 +145,7 @@ export default function PostDetailView({ post, onBack, onNavigate }: Props) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
               {prevPost ? (
                 <button
-                  onClick={() => onNavigate?.(prevPost)}
+                  onClick={() => handleNavigate(prevPost)}
                   className="group p-6 md:p-8 bg-eggshell/20 rounded-3xl border border-eggshell hover:border-gold/30 transition-colors text-left cursor-pointer"
                 >
                   <p className="text-charcoal/40 text-[10px] font-bold uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
@@ -124,7 +158,7 @@ export default function PostDetailView({ post, onBack, onNavigate }: Props) {
               ) : <div />}
               {nextPost ? (
                 <button
-                  onClick={() => onNavigate?.(nextPost)}
+                  onClick={() => handleNavigate(nextPost)}
                   className="group p-6 md:p-8 bg-eggshell/20 rounded-3xl border border-eggshell hover:border-gold/30 transition-colors text-right cursor-pointer"
                 >
                   <p className="text-charcoal/40 text-[10px] font-bold uppercase tracking-[0.3em] mb-4 flex items-center justify-end gap-2">

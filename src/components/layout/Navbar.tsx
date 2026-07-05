@@ -1,14 +1,15 @@
 import { useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '@/store'
 import { cn } from '@/lib/utils'
 
 interface Props {
   onLoginClick: () => void
-  onAdminClick: () => void
   className?: string
 }
 
-export function Navbar({ onLoginClick, onAdminClick, className }: Props) {
+export function Navbar({ onLoginClick, className }: Props) {
+  const navigate = useNavigate()
   const { isAuthenticated, logout } = useAuthStore()
   const [menuOpen, setMenuOpen] = useState(false)
   const [pressProgress, setPressProgress] = useState(0)
@@ -41,6 +42,17 @@ export function Navbar({ onLoginClick, onAdminClick, className }: Props) {
     if (pressTimer.current !== undefined) clearTimeout(pressTimer.current)
     if (pressAnimRef.current !== undefined) cancelAnimationFrame(pressAnimRef.current)
     setPressProgress(0)
+  }
+
+  function handleAdminClick() {
+    closeMenu()
+    navigate('/admin')
+  }
+
+  async function handleLogout() {
+    closeMenu()
+    await logout()
+    navigate('/')
   }
 
   return (
@@ -106,10 +118,10 @@ export function Navbar({ onLoginClick, onAdminClick, className }: Props) {
         <div className="flex items-center gap-4">
           {isAuthenticated && (
             <>
-              <button onClick={() => { closeMenu(); onAdminClick() }} className="hidden lg:inline-flex btn-sweep px-4 md:px-6 py-2 md:py-3 border border-charcoal text-[11px] uppercase tracking-[0.3em] font-bold cursor-pointer">
+              <button onClick={handleAdminClick} className="hidden lg:inline-flex btn-sweep px-4 md:px-6 py-2 md:py-3 border border-charcoal text-[11px] uppercase tracking-[0.3em] font-bold cursor-pointer">
                 <span className="relative z-10">+ Crear Post</span>
               </button>
-              <button onClick={() => { closeMenu(); logout() }} className="hidden lg:inline-block text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer">
+              <button onClick={handleLogout} className="hidden lg:inline-block text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer">
                 Salir
               </button>
             </>
@@ -144,10 +156,10 @@ export function Navbar({ onLoginClick, onAdminClick, className }: Props) {
           <a href="#contacto" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Contacto</a>
           {isAuthenticated && (
             <div className="flex gap-4 pt-4 border-t border-black/5">
-              <button onClick={() => { closeMenu(); onAdminClick() }} className="btn-sweep px-6 py-3 border border-charcoal text-[11px] uppercase tracking-[0.3em] font-bold cursor-pointer flex-1 text-center">
+              <button onClick={handleAdminClick} className="btn-sweep px-6 py-3 border border-charcoal text-[11px] uppercase tracking-[0.3em] font-bold cursor-pointer flex-1 text-center">
                 <span className="relative z-10">+ Crear Post</span>
               </button>
-              <button onClick={() => { closeMenu(); logout() }} className="text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer flex-1">
+              <button onClick={handleLogout} className="text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer flex-1">
                 Salir
               </button>
             </div>

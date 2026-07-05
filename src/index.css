@@ -14,6 +14,11 @@
   /* Acentos Eléctricos y Encendidos (Azul y Violeta) */
   --color-gold: #2563EB;        /* Azul Eléctrico vibrante */
   --color-gold-muted: #7C3AED;  /* Violeta Digital intenso */
+
+  /* Colores vivos complementarios */
+  --color-sunset: #F97316;      /* Naranja vibrante */
+  --color-rose: #EC4899;        /* Rosa vivo */
+  --color-emerald: #10B981;     /* Esmeralda vivo */
 }
 
 @layer base {

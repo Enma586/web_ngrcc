@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CreatePost } from '../components/CreatePost'
 import { PostList } from '../components/PostList'
 import { EditPost } from '../components/EditPost'
@@ -6,11 +7,8 @@ import { postService } from '../services/post.service'
 import type { Post } from '@/types'
 import { toast } from 'sonner'
 
-interface Props {
-  onClose: () => void
-}
-
-export default function AdminDashboard({ onClose }: Props) {
+export default function AdminDashboard() {
+  const navigate = useNavigate()
   const [posts, setPosts] = useState<Post[]>([])
   const [loadKey, setLoadKey] = useState(0)
   const [editingPost, setEditingPost] = useState<Post | null>(null)
@@ -37,6 +35,10 @@ export default function AdminDashboard({ onClose }: Props) {
     }
   }
 
+  function handleClose() {
+    navigate('/')
+  }
+
   return (
     <>
       <div className="fixed inset-0 z-[90] bg-alabaster overflow-y-auto">
@@ -45,7 +47,7 @@ export default function AdminDashboard({ onClose }: Props) {
             <div className="absolute inset-0 bg-gradient-radial from-gold to-transparent opacity-[0.08] pointer-events-none" />
 
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="relative z-10 self-start mb-6 text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal/60 hover:text-charcoal transition-colors cursor-pointer flex items-center gap-2"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
@@ -60,7 +62,7 @@ export default function AdminDashboard({ onClose }: Props) {
                 <div className="flex flex-col">
                   <p className="text-[10px] text-gold-muted font-extrabold text-white bg-charcoal px-2 py-0.5 rounded tracking-[0.3em] uppercase leading-none mb-2 w-fit">ADMIN CORE</p>
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                    <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
                     <span className="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Servicio En Línea</span>
                   </div>
                 </div>
