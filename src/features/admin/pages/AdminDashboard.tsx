@@ -56,11 +56,9 @@ export default function AdminDashboard() {
 
             <div className="brand-animate mb-8 md:mb-12 border-b border-eggshell pb-8 md:pb-10 relative z-10">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-charcoal rounded-2xl flex items-center justify-center text-gold shadow-xl -rotate-[4deg] hover:rotate-0 transition-transform duration-500 cursor-help">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20"/><path d="M2 12h20"/></svg>
-                </div>
+
                 <div className="flex flex-col">
-                  <p className="text-[10px] text-gold-muted font-extrabold text-white bg-charcoal px-2 py-0.5 rounded tracking-[0.3em] uppercase leading-none mb-2 w-fit">ADMIN CORE</p>
+                  <p className="text-[10px] text-gold-muted font-extrabold text-white bg-charcoal px-2 py-0.5 rounded tracking-[0.3em] uppercase leading-none mb-2 w-fit">ADMINISTRACIÓN</p>
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
                     <span className="text-[11px] text-gray-500 font-bold uppercase tracking-widest">Servicio En Línea</span>
