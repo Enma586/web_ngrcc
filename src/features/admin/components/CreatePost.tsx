@@ -132,7 +132,7 @@ export function CreatePost({ onCreated }: { onCreated: () => void }) {
         </div>
 
         <div className="pt-4">
-          <button type="submit" disabled={isUploading || !title || !description || !imageFile} className="w-full bg-gradient-to-r from-gold-muted to-rose text-black py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs shadow-lg hover:shadow-rose/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed">
+          <button type="submit" disabled={isUploading || !title || !description || !imageFile} className="w-full text-black py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed" style={{ background: 'linear-gradient(to right, #FF7500, #FFC800)' }}>
             {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : statusText === '¡Éxito!' ? <Check className="w-4 h-4 text-white" /> : null}
             <span>{statusText}</span>
             {!isUploading && statusText === 'Publicar Contenido' && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />}

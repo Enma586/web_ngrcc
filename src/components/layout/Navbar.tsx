@@ -127,7 +127,7 @@ export function Navbar({ onLoginClick, className }: Props) {
         <div className="flex items-center gap-4">
           {isAuthenticated && (
             <>
-              <button onClick={handleAdminClick} className="hidden lg:inline-flex items-center gap-2 px-5 md:px-7 py-2 md:py-3 bg-gradient-to-r from-gold-muted to-rose text-black text-[11px] uppercase tracking-[0.3em] font-bold rounded-xl shadow-lg hover:shadow-rose/25 hover:scale-105 transition-all duration-300 cursor-pointer">
+              <button onClick={handleAdminClick} className="hidden lg:inline-flex items-center gap-2 px-5 md:px-7 py-2 md:py-3 text-black text-[11px] uppercase tracking-[0.3em] font-bold rounded-xl shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer" style={{ background: 'linear-gradient(to right, #FF7500, #FFC800)' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 <span>Publicar</span>
               </button>
@@ -166,7 +166,7 @@ export function Navbar({ onLoginClick, className }: Props) {
           <a href="#contacto" onClick={closeMenu} className="nav-link text-[11px] uppercase tracking-[0.3em] font-bold text-charcoal py-2">Contacto</a>
           {isAuthenticated && (
             <div className="flex gap-4 pt-4 border-t border-black/5">
-              <button onClick={handleAdminClick} className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-muted to-rose text-white text-[11px] uppercase tracking-[0.3em] font-bold rounded-xl shadow-lg hover:shadow-rose/25 hover:scale-105 transition-all duration-300 cursor-pointer flex-1 text-center">
+              <button onClick={handleAdminClick} className="flex items-center justify-center gap-2 px-6 py-3 text-black text-[11px] uppercase tracking-[0.3em] font-bold rounded-xl shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer flex-1 text-center" style={{ background: 'linear-gradient(to right, #FF7500, #FFC800)' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 <span>Publicar</span>
               </button>

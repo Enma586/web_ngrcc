@@ -9,7 +9,7 @@
   --color-eggshell: #F1F5F9;
   
   /* Texto principal de alta legibilidad (Azul Marino Oscuro) */
-  --color-charcoal: #FF8800;
+  --color-charcoal: #1A1A2E;
   
   /* Acentos Eléctricos y Encendidos (Púrpura) */
   --color-gold: #FF7500;        /* Púrpura Eléctrico vibrante */
@@ -92,8 +92,8 @@
   font-weight: 300;
   font-style: italic;
   line-height: 1;
-  color: var(--color-gold-muted);
-  opacity: 0.08;
+  color: var(--color-eggshell);
+  opacity: 0.5;
   letter-spacing: 0.1em;
 }
 

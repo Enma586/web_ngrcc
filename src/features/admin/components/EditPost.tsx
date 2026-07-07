@@ -119,7 +119,7 @@ export function EditPost({ post, onClose, onUpdated }: Props) {
             <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={5} className="w-full bg-white rounded-xl border border-gray-200 focus:border-gold focus:bg-gray-50/30 outline-hidden p-5 text-gray-700 leading-relaxed transition-all duration-300 resize-none" required />
           </div>
 
-          <button type="submit" disabled={isUploading} className="w-full bg-gradient-to-r from-gold-muted to-rose text-white py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs shadow-lg hover:shadow-rose/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer flex items-center justify-center gap-3 disabled:opacity-50">
+          <button type="submit" disabled={isUploading} className="w-full text-black py-4 rounded-xl font-bold tracking-[0.2em] uppercase text-xs shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer flex items-center justify-center gap-3 disabled:opacity-50" style={{ background: 'linear-gradient(to right, #FF7500, #FFC800)' }}>
             {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
             <span>{isUploading ? 'Guardando...' : 'Guardar Cambios'}</span>
             {!isUploading && <ArrowRight className="w-4 h-4" />}

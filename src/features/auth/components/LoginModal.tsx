@@ -113,9 +113,9 @@ export function LoginModal({ onClose, onSuccess }: Props) {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-charcoal text-alabaster py-5 px-8 rounded-xl flex items-center justify-center gap-4 group relative overflow-hidden cursor-pointer hover:shadow-2xl hover:shadow-charcoal/20 active:scale-[0.99] transition-shadow duration-300 disabled:opacity-70"
+              className="w-full text-black py-5 px-8 rounded-xl flex items-center justify-center gap-4 group relative overflow-hidden cursor-pointer active:scale-[0.99] transition-all duration-300 disabled:opacity-70 font-bold" style={{ background: 'linear-gradient(to right, #FF7500, #FFC800)' }}
             >
-              <span className="relative z-10 text-[12px] font-bold tracking-[0.2em] uppercase">
+              <span className="relative z-10 text-[12px] tracking-[0.2em] uppercase">
                 {isLoading ? 'Verificando...' : 'Iniciar Sesión'}
               </span>
               {isLoading ? (
