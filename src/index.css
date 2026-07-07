@@ -19,6 +19,9 @@
   --color-sunset: #F97316;      /* Naranja vibrante */
   --color-rose: #FFF75C;        /* Rosa vivo */
   --color-emerald: #10B981;     /* Esmeralda vivo */
+
+  /* Watermark decoration */
+  --color-ng: #E6B800;
 }
 
 @layer base {
@@ -92,8 +95,8 @@
   font-weight: 300;
   font-style: italic;
   line-height: 1;
-  color: var(--color-eggshell);
-  opacity: 0.5;
+  color: var(--color-ng);
+  opacity: 0.15;
   letter-spacing: 0.1em;
 }
 
