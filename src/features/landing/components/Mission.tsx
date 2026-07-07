@@ -24,7 +24,7 @@ export function Mission() {
           </div>
           <div className="feature-item p-8 md:p-12 border-b md:border-b-0 md:border-r border-black/5 space-y-4 md:space-y-6">
             <span className="text-[11px] uppercase tracking-[0.4em] text-gold font-bold">02</span>
-            <h3 className="font-serif text-2xl md:text-3xl italic">Servicio Alegre</h3>
+            <h3 className="font-serif text-2xl md:text-3xl italic">Dones al Servicio</h3>
             <p className="text-gray-500 leading-relaxed text-sm font-light">
               Ponemos nuestros dones al servicio de los demás, entendiendo que el amor
               se manifiesta en la acción.
@@ -32,10 +32,9 @@ export function Mission() {
           </div>
           <div className="feature-item p-8 md:p-12 space-y-4 md:space-y-6">
             <span className="text-[11px] uppercase tracking-[0.4em] text-gold font-bold">03</span>
-            <h3 className="font-serif text-2xl md:text-3xl italic">Fe Renovada</h3>
+            <h3 className="font-serif text-2xl md:text-3xl italic">Renovados en la Fé </h3>
             <p className="text-gray-500 leading-relaxed text-sm font-light">
-              Redescubrimos la belleza de nuestra fe en el contexto del mundo moderno,
-              con esperanza y valentía.
+              Abrazamos nuevamente la esencia de nuestro camino espiritual para iluminar el mundo de hoy, con paz y firmeza.
             </p>
           </div>
         </div>

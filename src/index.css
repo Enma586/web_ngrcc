@@ -5,19 +5,19 @@
   --font-serif: 'Cormorant Garamond', serif;
   
   /* Fondos y bases limpios y modernos con un levísimo matiz frío */
-  --color-alabaster: #F8FAFC;
+  --color-alabaster: #FAF9FF;
   --color-eggshell: #F1F5F9;
   
   /* Texto principal de alta legibilidad (Azul Marino Oscuro) */
-  --color-charcoal: #0F172A;
+  --color-charcoal: #FF8800;
   
   /* Acentos Eléctricos y Encendidos (Púrpura) */
-  --color-gold: #7C3AED;        /* Púrpura Eléctrico vibrante */
-  --color-gold-muted: #A855F7;  /* Púrpura Digital intenso */
+  --color-gold: #FF7500;        /* Púrpura Eléctrico vibrante */
+  --color-gold-muted: #FFC800;  /* Púrpura Digital intenso */
 
   /* Colores vivos complementarios */
   --color-sunset: #F97316;      /* Naranja vibrante */
-  --color-rose: #EC4899;        /* Rosa vivo */
+  --color-rose: #FFF75C;        /* Rosa vivo */
   --color-emerald: #10B981;     /* Esmeralda vivo */
 }
 
